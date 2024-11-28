@@ -1,5 +1,11 @@
 package test.java.com.example.projetoredes.service;
 
+import com.example.projetoredes.service.CalculadoraService;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class CalculadoraServiceTeste {
   @Test
   @DisplayName("Quando acionado com 10 e 2, então deve retornar 5")
