@@ -8,19 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: 17
-        distribution: temurin
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
 
-    - name: Build with Maven
-      run: mvn -B package -DskipTests
+      - name: Build with Maven
+        run: mvn -B package -DskipTests
 
   test:
     runs-on: ubuntu-latest
@@ -57,7 +56,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5  # Corrigido para 'uses' em vez de 'run'
+        uses: docker/build-push-action@v5
         with:
           push: true
           tags: gabriellaperniconi/atividaderedes:latest
