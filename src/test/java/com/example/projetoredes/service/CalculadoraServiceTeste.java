@@ -1,4 +1,4 @@
-package test.java.com.example.projetoredes.service;
+package com.example.projetoredes.service;
 
 import com.example.projetoredes.service.CalculadoraService;
 import org.junit.jupiter.api.DisplayName;
