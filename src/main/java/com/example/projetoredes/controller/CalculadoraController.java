@@ -1,24 +1,23 @@
 package com.example.projetoredes.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.example.projetoredes.service.CalculadoraService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.projetoredes.service.CalculadoraService;
-
-@RequestMapping("/usuarios")
 @RestController
-
 public class CalculadoraController {
+
     private final CalculadoraService calculadoraService;
 
+    @Autowired
     public CalculadoraController(CalculadoraService calculadoraService) {
         this.calculadoraService = calculadoraService;
     }
 
-    @PostMapping("/dividir/{a}/{b}")
-    public double dividir(@PathVariable double a, @PathVariable double b) {
+    @GetMapping("/dividir")
+    public double dividir(@RequestParam double a, @RequestParam double b) {
         return calculadoraService.dividir(a, b);
     }
 }
